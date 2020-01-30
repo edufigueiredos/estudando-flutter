@@ -78,7 +78,7 @@ class _HomeState extends State<Home> {
       _resetFields();
       return;
     }
-    
+
     double euro = double.parse(text);
     realController.text = (euro * this.euro).toStringAsFixed(2);
     dolarController.text = (euro * this.euro / dolar).toStringAsFixed(2);
@@ -91,7 +91,7 @@ class _HomeState extends State<Home> {
       _resetFields();
       return;
     }
-    
+
     double peso = double.parse(text);
     realController.text = (peso * this.peso).toStringAsFixed(2);
     dolarController.text = (peso * this.peso / dolar).toStringAsFixed(2);
@@ -104,7 +104,7 @@ class _HomeState extends State<Home> {
       _resetFields();
       return;
     }
-    
+
     double bitcoin = double.parse(text);
     realController.text = (bitcoin * this.bitcoin).toStringAsFixed(2);
     dolarController.text = (bitcoin * this.bitcoin / dolar).toStringAsFixed(2);
@@ -188,16 +188,17 @@ class _HomeState extends State<Home> {
 Widget buildTextField(String label, String prefix,
     TextEditingController controller, Function convert) {
   return TextField(
-    controller: controller,
-    decoration: InputDecoration(
-      labelText: label,
-      labelStyle: TextStyle(color: Colors.amber),
-      prefixText: '$prefix ',
-      enabledBorder:
-          OutlineInputBorder(borderSide: BorderSide(color: Colors.amber)),
-    ),
-    style: TextStyle(color: Colors.amber),
-    onChanged: convert,
-    keyboardType: TextInputType.numberWithOptions(decimal: true)
-  );
+      controller: controller,
+      decoration: InputDecoration(
+        labelText: label,
+        labelStyle: TextStyle(color: Colors.amber),
+        prefixText: '$prefix ',
+        focusedBorder:
+            OutlineInputBorder(borderSide: BorderSide(color: Colors.amber)),
+        enabledBorder:
+            OutlineInputBorder(borderSide: BorderSide(color: Colors.amber)),
+      ),
+      style: TextStyle(color: Colors.amber),
+      onChanged: convert,
+      keyboardType: TextInputType.numberWithOptions(decimal: true));
 }
